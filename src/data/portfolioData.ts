@@ -43,22 +43,22 @@ export const portfolioData = {
   areas: [
     {
       title: "Logística Operacional",
-      description: "Gestão operacional, roteirização, custos, expedição, coletas e acompanhamento de performance para operações logísticas de alta complexidade.",
+      description: "Supervisão de frotas, roteirização técnica e controle de custos e performance logística diária.",
       iconName: "Truck"
     },
     {
       title: "Automação de Processos",
-      description: "Eliminação de atividades manuais através de automação, integração de dados e padronização de fluxos operacionais.",
+      description: "Otimização de rotinas manuais através de scripts, integrações inteligentes e padronização de fluxos.",
       iconName: "Cpu"
     },
     {
       title: "Sistemas Corporativos",
-      description: "Desenvolvimento e arquitetura de soluções digitais voltadas à resolução de problemas reais de operações e negócios.",
+      description: "Arquitetura e desenvolvimento de soluções digitais sob medida para resolver gargalos operacionais.",
       iconName: "Database"
     },
     {
       title: "Desenvolvimento Assistido por IA",
-      description: "Especificação, arquitetura e condução de projetos de software assistidos por Inteligência Artificial, priorizando continuidade, rastreabilidade e redução de alucinações.",
+      description: "Especificações técnicas orientadoras e uso estratégico de LLMs para criação ágil de softwares robustos.",
       iconName: "Layers"
     }
   ] as Area[],

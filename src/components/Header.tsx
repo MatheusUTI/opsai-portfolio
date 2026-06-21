@@ -52,7 +52,7 @@ export default function Header() {
           onClick={(e) => handleScrollTo(e, "#root")}
           className="flex items-center gap-2 text-base md:text-lg font-extrabold font-chivo tracking-widest text-[#1b1c1c] uppercase"
         >
-          <img src="/public/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
+          <img src="/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
           <span>A. ALBUQUERQUE</span>
         </a>
 

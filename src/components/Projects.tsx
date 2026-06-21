@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { portfolioData } from "../data/portfolioData";
 import { Check, Terminal, RefreshCw, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function Projects() {
-  const { projects } = portfolioData;
-
   // Track expanded terminal states for each project
   const [expandedTerminals, setExpandedTerminals] = useState<Record<string, boolean>>({
     "semi-tms": false,
@@ -40,8 +37,7 @@ export default function Projects() {
             <div className="bg-[#1c1b1a] p-3 border border-zinc-800 space-y-1">
               <div className="text-emerald-300 font-bold">🎯 PROCESSAMENTO DA IA:</div>
               <p className="text-zinc-300">"Agrupando cargas para rota Campinas ➔ Curitiba..."</p>
-              <p className="text-zinc-300">↳ Veículo VOLVO-320: Capacidade = 83% aproveitada.</p>
-              <p className="text-emerald-400">↳ Sugestão: Desviar via Rodovia Regis Bittencourt para evitar pedágio de carga.</p>
+              <p className="text-emerald-400">↳ Veículo VOLVO-320: Capacidade = 83% aproveitada com roteiro otimizado.</p>
             </div>
 
             <div className="pt-2 flex justify-between items-center text-[10px] text-[#cac6c4] border-t border-zinc-900">
@@ -64,19 +60,17 @@ data class Tarefa(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "nome") val nome: String,
     @ColumnInfo(name = "recorrencia_dias") val recorrencia: Int,
-    @ColumnInfo(name = "ultima_execucao") val timestamp: Long,
-    @ColumnInfo(name = "responsavel") val responsavel: String
+    @ColumnInfo(name = "ultima_execucao") val timestamp: Long
 )`}
             </pre>
 
             <div className="bg-[#1c1b1a] p-3 border border-zinc-800 space-y-1">
               <div className="text-cyan-300 font-bold">📱 VISUAL DA ROTINA FAMILIAR:</div>
               <p className="text-zinc-400">• Lavar filtro de água ➔ <span className="text-emerald-400 font-semibold">(A cada 15 dias)</span> ⏰ Vence hoje</p>
-              <p className="text-zinc-400">• Revisar caixa de gordura ➔ <span className="text-amber-400 font-semibold">(A cada 90 dias)</span></p>
             </div>
 
             <div className="pt-2 flex justify-between items-center text-[10px] text-[#cac6c4] border-t border-zinc-900">
-              <span>Status: <span className="text-amber-500 font-bold">EM DESENVOLVIMENTO (KOTLIN/ROOM)</span></span>
+              <span>Status: <span className="text-amber-500 font-bold">SUCESSO (ROOM / SQLITE)</span></span>
             </div>
           </div>
         );
@@ -91,21 +85,13 @@ data class Tarefa(
             <div className="space-y-2 text-[#e6e2df]">
               <p className="text-indigo-400 font-semibold"># REQUISITOS DE DESIGN ANCORADOS:</p>
               <div className="space-y-1 pl-3 border-l border-indigo-900 text-[#cac6c4] text-[11px]">
-                <p>1. Nunca remova seções descritas por markdown anterior.</p>
-                <p>2. Escreva as regras de negócios ANTES do código técnico.</p>
-                <p>3. Todas as dependências devem possuir correspondência estrita no pack.</p>
+                <p>1. Documentação como fonte absoluta da verdade.</p>
+                <p>2. Pequenos incrementos testáveis e validados por ciclo.</p>
               </div>
             </div>
 
-            <div className="bg-[#1c1b1a] p-3 border border-zinc-800 text-[11px]">
-              <span className="text-emerald-400 font-bold block mb-1">✓ REDUÇÃO DE ALUCINAÇÕES OPERACIONAIS:</span>
-              <p className="text-zinc-400 leading-relaxed">
-                Ao invés de passar 10.000 linhas de código para a IA, passamos APENAS a especificação incremental de 1 arquivo e suas dependências. Menor contexto = zero alucinações.
-              </p>
-            </div>
-
             <div className="pt-2 flex justify-between items-center text-[10px] text-[#cac6c4] border-t border-zinc-900">
-              <span>Status: <span className="text-amber-500 font-bold">EM DESENVOLVIMENTO (Agnóstico)</span></span>
+              <span>Status: <span className="text-amber-500 font-bold">ATIVADO (Agnóstico)</span></span>
             </div>
           </div>
         );
@@ -123,8 +109,8 @@ data class Tarefa(
         <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight text-center md:text-left">
           Projetos em Destaque
         </h2>
-        <p className="font-serif text-base md:text-lg text-[#444748] max-w-2xl leading-relaxed">
-          Tanto na logística de expedição física quanto no desenvolvimento em IA, o foco do Anderson está em soluções que resolvem gargalos de forma limpa e pragmática.
+        <p className="font-serif text-base md:text-lg text-[#2d2e2f] max-w-2xl leading-relaxed font-semibold">
+          Soluções pragmáticas projetadas para resolver gargalos reais, aliando eficiência operacional e tecnologia de alta fidelidade.
         </p>
       </div>
 
@@ -134,54 +120,61 @@ data class Tarefa(
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <span className="font-chivo text-[10px] text-[#444748] bg-[#e3e2e2] px-3 py-1 uppercase tracking-wide font-semibold">
-                EM DESENVOLVIMENTO
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#efeded] px-3 py-1 uppercase tracking-wider font-extrabold border border-[#e3e2e2]">
+                STATUS: EM DESENVOLVIMENTO
               </span>
             </div>
             
-            <h3 className="font-chivo font-bold text-2xl md:text-3xl text-[#1b1c1c]">
-              Sistema de Roteirização / Semi-TMS
+            <h3 className="font-chivo font-extrabold text-2xl md:text-3xl text-[#1b1c1c] tracking-tight">
+              1) Sistema de Roteirização / Semi-TMS
             </h3>
             
-            <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              Plataforma desenvolvida para apoiar operações logísticas através de roteirização assistida, análise operacional e planejamento diário de entregas.
-            </p>
+            <div className="space-y-3 font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Contexto do problema:</strong> 
+                Dificuldade operacional na roteirização diária de frotas e controle manual ineficiente de custos de fretes e entregas.
+              </p>
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Solução desenvolvida:</strong> 
+                Sistema semi-TMS que simplifica a programação diária de frotas, calcula desvios de pedágios e emite análises de custos integradas.
+              </p>
+            </div>
 
-            <div className="mt-6 flex flex-col gap-3">
-              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
+            <div className="mt-4 flex flex-col gap-2">
+              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1">
                 Principais Funcionalidades
               </h4>
-              <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
+              <ul className="flex flex-col gap-1.5 font-serif text-sm text-[#1b1c1c] font-semibold">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Roteirização operacional assistida</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Roteirização técnica assistida por destino</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Programação diária de veículos</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Programação diária simplificada de veículos</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Análise operacional e indicadores</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Apuração exata e acompanhamento de fretes</span>
                 </li>
               </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">React</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">SQLite</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Arquitetura Orientada por Especificações</span>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">React</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">SQLite</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Tailwind CSS</span>
             </div>
 
             {/* Terminal toggle */}
             <div className="mt-4">
               <button
                 onClick={() => toggleTerminal("semi-tms")}
-                className="flex items-center gap-1.5 text-xs font-chivo font-bold text-cyan-800 hover:text-black transition-colors"
+                className="flex items-center gap-1.5 text-xs font-chivo font-black text-[#1b1c1c] hover:text-[#4b5563] transition-colors"
               >
-                <Terminal className="w-4 h-4 text-cyan-600" />
+                <Terminal className="w-4 h-4 text-[#1b1c1c]" />
                 <span>{expandedTerminals["semi-tms"] ? "Ocultar Monitor Técnico" : "Inspecionar Integração Ativa"}</span>
-                {expandedTerminals["semi-tms"] ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                {expandedTerminals["semi-tms"] ? <ChevronUp className="w-3 h-3 text-[#1b1c1c]" /> : <ChevronDown className="w-3 h-3 text-[#1b1c1c]" />}
               </button>
               {expandedTerminals["semi-tms"] && getTerminalContent("semi-tms")}
             </div>
@@ -216,54 +209,61 @@ data class Tarefa(
 
           <div className="col-span-12 md:col-span-5 order-1 md:order-2 flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wide font-semibold">
-                CONCLUÍDO / EVOLUÇÃO CONTÍNUA
+              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wider font-extrabold border border-[#1b1c1c]">
+                STATUS: EVOLUÇÃO CONTÍNUA
               </span>
             </div>
 
-            <h3 className="font-chivo font-bold text-2xl md:text-3xl text-[#1b1c1c]">
-              Casa em Dia
+            <h3 className="font-chivo font-extrabold text-2xl md:text-3xl text-[#1b1c1c] tracking-tight">
+              2) Casa em Dia
             </h3>
 
-            <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              Aplicativo desenvolvido para organizar e automatizar rotinas domésticas, manutenção preventiva e gestão residencial.
-            </p>
+            <div className="space-y-3 font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Contexto do problema:</strong> 
+                Desorganização e esquecimento em rotinas de manutenções periódicas e do gerenciamento doméstico.
+              </p>
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Solução desenvolvida:</strong> 
+                Aplicativo nativo Android que gerencia a recorrência inteligente de afazeres, organizando agendas de modo simples e livre de atritos.
+              </p>
+            </div>
 
-            <div className="mt-6 flex flex-col gap-3">
-              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
+            <div className="mt-4 flex flex-col gap-2">
+              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1">
                 Principais Funcionalidades
               </h4>
-              <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
+              <ul className="flex flex-col gap-1.5 font-serif text-sm text-[#1b1c1c] font-semibold">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Manutenção preventiva</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Agenda recorrente baseada em frequência</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Gestão de rotinas</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Histórico completo de realizações offline</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Alertas e notificações</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Configuração ágil de tarefas críticas</span>
                 </li>
               </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Kotlin</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Android SDK</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">SQLite / Room</span>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Kotlin</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Android SDK</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Room DB</span>
             </div>
 
             {/* Terminal toggle */}
             <div className="mt-4">
               <button
                 onClick={() => toggleTerminal("casa-em-dia")}
-                className="flex items-center gap-1.5 text-xs font-chivo font-bold text-cyan-800 hover:text-black transition-colors"
+                className="flex items-center gap-1.5 text-xs font-chivo font-black text-[#1b1c1c] hover:text-[#4b5563] transition-colors"
               >
-                <Terminal className="w-4 h-4 text-cyan-600" />
+                <Terminal className="w-4 h-4 text-[#1b1c1c]" />
                 <span>{expandedTerminals["casa-em-dia"] ? "Ocultar Schema Local" : "Visualizar Schema Room (Kotlin)"}</span>
-                {expandedTerminals["casa-em-dia"] ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                {expandedTerminals["casa-em-dia"] ? <ChevronUp className="w-3 h-3 text-[#1b1c1c]" /> : <ChevronDown className="w-3 h-3 text-[#1b1c1c]" />}
               </button>
               {expandedTerminals["casa-em-dia"] && getTerminalContent("casa-em-dia")}
             </div>
@@ -277,57 +277,60 @@ data class Tarefa(
           <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wide font-semibold">
-                DESENVOLVIMENTO CONTÍNUO
+                STATUS: EM DESENVOLVIMENTO
               </span>
             </div>
 
-            <h3 className="font-chivo font-bold text-2xl md:text-3xl text-[#1b1c1c]">
-              AISDD Framework
+            <h3 className="font-chivo font-extrabold text-2xl md:text-3xl text-[#1b1c1c] tracking-tight">
+              3) AISDD Framework
             </h3>
 
-            <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              AISDD é uma metodologia para desenvolvimento de software orientado por especificações e assistido por Inteligência Artificial. Seu objetivo é garantir continuidade, rastreabilidade, redução de alucinações e evolução incremental em projetos de longo prazo.
-            </p>
+            <div className="space-y-3 font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Contexto do problema:</strong> 
+                Alucinações frequentes de LLMs e perda severa de conformidade em sessões longas de desenvolvimento com Inteligência Artificial.
+              </p>
+              <p>
+                <strong className="font-chivo text-[#1b1c1c] text-xs uppercase tracking-wider block">Solução desenvolvida:</strong> 
+                Metodologia baseada em especificações persistentes estruturadas, garantindo que a IA atue sempre dentro de limites estritos.
+              </p>
+            </div>
 
-            <div className="mt-6 flex flex-col gap-3">
-              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
-                Princípios Fundamentais
+            <div className="mt-4 flex flex-col gap-2">
+              <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1">
+                Principais Funcionalidades
               </h4>
-              <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
+              <ul className="flex flex-col gap-1.5 font-serif text-sm text-[#1b1c1c] font-semibold">
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Documentação como fonte da verdade</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Documentação viva como única fonte de verdade</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Continuidade entre sessões</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Estrutura de handoff e continuidade modular</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Mudanças incrementais e rastreáveis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Preservação de funcionalidades existentes</span>
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0 stroke-[3]" />
+                  <span>Rastreador de decisões e regras de arquitetura</span>
                 </li>
               </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Metodologia</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Especificação</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Arquitetura</span>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">IA Assistida</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Metodologia</span>
+              <span className="font-chivo text-[10px] text-[#1b1c1c] bg-[#e3e2e2] font-extrabold border border-transparent px-2.5 py-1 uppercase tracking-wider">Markdown</span>
             </div>
 
             {/* Terminal toggle */}
             <div className="mt-4">
               <button
                 onClick={() => toggleTerminal("aisdd-framework")}
-                className="flex items-center gap-1.5 text-xs font-chivo font-bold text-cyan-800 hover:text-black transition-colors"
+                className="flex items-center gap-1.5 text-xs font-chivo font-black text-[#1b1c1c] hover:text-[#4b5563] transition-colors"
               >
-                <Terminal className="w-4 h-4 text-cyan-600" />
-                <span>{expandedTerminals["aisdd-framework"] ? "Ocultar Especificações" : "Inspecionar Prompt Controller"}</span>
-                {expandedTerminals["aisdd-framework"] ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                <Terminal className="w-4 h-4 text-[#1b1c1c]" />
+                <span>{expandedTerminals["aisdd-framework"] ? "Ocultar Monitor" : "Inspecionar Prompt Controller"}</span>
+                {expandedTerminals["aisdd-framework"] ? <ChevronUp className="w-3 h-3 text-[#1b1c1c]" /> : <ChevronDown className="w-3 h-3 text-[#1b1c1c]" />}
               </button>
               {expandedTerminals["aisdd-framework"] && getTerminalContent("aisdd-framework")}
             </div>
@@ -336,7 +339,7 @@ data class Tarefa(
           <div className="col-span-12 md:col-span-7 mt-4 md:mt-0">
             <div className="w-full aspect-[4/3] bg-[#e9e8e7] border border-[#e3e2e2] flex items-center justify-center p-8 overflow-hidden">
               {/* Abstract Representation for Framework */}
-              <div className="w-full h-full border border-[#e3e2e2] relative flex flex-col bg-[#fbf9f9]">
+              <div className="w-full h-full border border-[#e?e2e2] relative flex flex-col bg-[#fbf9f9]">
                 <div className="border-b border-[#e3e2e2] p-4 flex justify-between items-center bg-[#fbf9f9]">
                   <span className="font-chivo text-[10px] font-bold uppercase tracking-widest text-[#1b1c1c]">AISDD.config</span>
                   <span className="text-xs font-mono text-[#868382]">[PROMPT CONTROLLER]</span>

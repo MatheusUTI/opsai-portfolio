@@ -14,7 +14,7 @@ export default function Method() {
         <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight leading-none">
           Método de Trabalho
         </h2>
-        <p className="font-serif text-base md:text-lg text-[#444748] max-w-2xl leading-relaxed">
+        <p className="font-serif text-base md:text-lg text-[#2d2e2f] max-w-2xl leading-relaxed font-semibold">
           Tanto no pátio físico quanto na escrita de sistemas, projetos robustos exigem um fluxo de trabalho previsível e focado na resolução rápida de problemas reais.
         </p>
       </div>
@@ -27,18 +27,18 @@ export default function Method() {
             className="border border-[#e3e2e2] p-8 flex flex-col justify-between gap-6 bg-[#fbf9f9] group hover:border-[#1b1c1c] transition-colors duration-300"
           >
             <div className="space-y-4">
-              <span className="font-chivo text-3xl font-black text-[#cac6c4] group-hover:text-[#1b1c1c] transition-colors duration-300 block">
+              <span className="font-chivo text-3xl font-black text-[#868382] group-hover:text-[#1b1c1c] transition-colors duration-300 block">
                 {step.number}
               </span>
               <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c]">
                 {step.title}
               </h3>
-              <p className="font-serif text-sm text-[#444748] leading-relaxed">
+              <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
                 {step.description}
               </p>
             </div>
 
-            <div className="border-t border-[#e3e2e2] pt-3 text-[9px] font-chivo uppercase tracking-widest text-[#cac6c4]">
+            <div className="border-t border-[#e3e2e2] pt-3 text-[9px] font-chivo uppercase tracking-widest text-[#1b1c1c] font-extrabold">
               Fase {step.number} de Execução
             </div>
           </div>
@@ -53,11 +53,11 @@ export default function Method() {
             <span>Engenharia de Processos</span>
           </div>
 
-          <h4 className="font-chivo font-bold text-[#1b1c1c] text-lg">
+          <h4 className="font-chivo font-extrabold text-[#1b1c1c] text-lg">
             A especificação rigorosa como âncora absoluta de qualquer sistema.
           </h4>
 
-          <p className="font-serif text-sm text-[#444748] leading-relaxed">
+          <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
             As ideias precisam ser testadas e documentadas com exatidão matemática. Através de especificações imutáveis de texto simples, Anderson mantém o alinhamento com sistemas internos corporativos, evitando desperdícios e alucinações cognitivas de escopo.
           </p>
         </div>

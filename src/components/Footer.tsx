@@ -14,7 +14,7 @@ export default function Footer() {
         {/* Brand Logo and Subtitle */}
         <div className="flex flex-col items-center md:items-start">
           <div className="flex items-center gap-2 text-base md:text-lg font-chivo font-extrabold text-[#1b1c1c] uppercase tracking-widest">
-            <img src="/public/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
+            <img src="/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
             <span>A. ALBUQUERQUE</span>
           </div>
           <span className="font-chivo text-[9px] md:text-[10px] uppercase tracking-wider text-[#868382] mt-1 font-bold">

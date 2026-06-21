@@ -1,9 +1,7 @@
 import { portfolioData } from "../data/portfolioData";
-import { Hammer } from "lucide-react";
+import { Hammer, Check } from "lucide-react";
 
 export default function About() {
-  const { aboutHeading, aboutText } = portfolioData.personal;
-
   return (
     <section
       id="sobre"
@@ -28,24 +26,37 @@ export default function About() {
           <div className="flex flex-col gap-6 justify-center order-2 lg:order-1">
             <div className="border-l-2 pl-6 border-[#1b1c1c]">
               <p className="font-serif text-lg md:text-xl text-[#1b1c1c] leading-relaxed font-semibold">
-                Anderson Matheus Albuquerque atua como Supervisor Operacional de Logística e desenvolve soluções digitais orientadas à resolução de problemas reais.
+                Anderson Matheus Albuquerque
               </p>
             </div>
             
-            <p className="font-serif text-base text-[#444748] leading-relaxed">
-              Sua experiência diária com roteirização, gestão operacional, custos, expedição, coletas e performance logística serve como base para criação de sistemas, automações e metodologias voltadas à eficiência operacional.
+            <p className="font-serif text-base text-[#2d2e2f] leading-relaxed font-semibold">
+              Com mais de uma década de atuação em operações logísticas de transporte e distribuição, adquiri profunda vivência direta na supervisão operacional de equipes de frota própria e terceirizada, controlando de perto rotinas de roteirização técnica, prazos, custos e metas de performance diárias.
             </p>
 
-            <p className="font-serif text-base text-[#444748] leading-relaxed">
-              Combinando experiência operacional prática, pensamento analítico e desenvolvimento assistido por Inteligência Artificial, busca transformar processos complexos em soluções simples, escaláveis e aplicáveis ao mundo real.
+            <p className="font-serif text-base text-[#2d2e2f] leading-relaxed font-semibold">
+              Unindo essa experiência prática em operações físicas à tecnologia, projeto e desenvolvo sistemas, softwares e automações pragmáticas voltadas a problemas reais de logística. Utilizo Inteligência Artificial e especificações digitais estruturadas para acelerar a entrega de soluções robustas que realmente otimizam processos e apoiam decisões.
             </p>
 
-            {/* Quote */}
-            <blockquote className="mt-4 p-4 bg-[#fbf9f9] border border-[#e3e2e2]">
-              <p className="font-serif text-base md:text-lg text-[#1b1c1c] italic leading-relaxed">
-                "Problemas reais exigem soluções reais. A tecnologia só gera valor quando melhora a operação."
-              </p>
-            </blockquote>
+            {/* Highlights List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div className="flex items-center gap-2 text-[#1b1c1c]">
+                <Check className="w-4 h-4 text-emerald-600 stroke-[3]" />
+                <span className="font-chivo text-xs uppercase tracking-wider font-bold">+10 anos em logística</span>
+              </div>
+              <div className="flex items-center gap-2 text-[#1b1c1c]">
+                <Check className="w-4 h-4 text-emerald-600 stroke-[3]" />
+                <span className="font-chivo text-xs uppercase tracking-wider font-bold">Supervisão operacional</span>
+              </div>
+              <div className="flex items-center gap-2 text-[#1b1c1c]">
+                <Check className="w-4 h-4 text-emerald-600 stroke-[3]" />
+                <span className="font-chivo text-xs uppercase tracking-wider font-bold">Arquitetura de soluções digitais</span>
+              </div>
+              <div className="flex items-center gap-2 text-[#1b1c1c]">
+                <Check className="w-4 h-4 text-emerald-600 stroke-[3]" />
+                <span className="font-chivo text-xs uppercase tracking-wider font-bold">Desenvolvimento assistido por IA</span>
+              </div>
+            </div>
           </div>
 
           {/* Visual Placeholder */}
@@ -59,7 +70,7 @@ export default function About() {
               referrerPolicy="no-referrer"
             />
             <div className="absolute bottom-6 left-6 z-20">
-              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wider font-semibold">
+              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wider font-bold">
                 Perfil Profissional
               </span>
             </div>

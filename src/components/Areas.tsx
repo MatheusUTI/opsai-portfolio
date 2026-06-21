@@ -25,7 +25,7 @@ export default function Areas() {
           <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight leading-none">
             Atuação
           </h2>
-          <p className="font-serif text-base md:text-lg text-[#444748] max-w-sm leading-relaxed">
+          <p className="font-serif text-base md:text-lg text-[#2d2e2f] max-w-sm leading-relaxed font-semibold">
             Atuo na interseção entre operações, tecnologia e desenvolvimento de soluções digitais, utilizando experiência prática para otimizar processos e apoiar decisões.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function Areas() {
                   <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c]">
                     {area.title}
                   </h3>
-                  <p className="font-serif text-sm text-[#444748] leading-relaxed flex-grow">
+                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed flex-grow font-semibold">
                     {area.description}
                   </p>
                 </div>

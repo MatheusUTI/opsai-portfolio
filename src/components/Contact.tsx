@@ -39,13 +39,13 @@ export default function Contact() {
         {/* Left Column: Direct channels and descriptions (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-8">
           <div>
-            <span className="font-chivo text-xs font-bold text-[#444748] uppercase tracking-widest block mb-3">
+            <span className="font-chivo text-xs font-bold text-[#2d2e2f] uppercase tracking-widest block mb-3">
               Próximos Passos
             </span>
             <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tighter leading-none mb-6">
               Vamos Conversar
             </h2>
-            <p className="font-serif text-base text-[#444748] leading-relaxed max-w-md font-semibold">
+            <p className="font-serif text-base text-[#2d2e2f] leading-relaxed max-w-md font-bold">
               Interessado em discutir operações, automação, arquitetura de soluções ou desenvolvimento orientado por especificações?
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function Contact() {
               rel="noreferrer"
               className="group flex flex-col border-b border-transparent hover:border-[#1b1c1c] pb-2 transition-all duration-300"
             >
-              <span className="font-chivo text-[10px] uppercase text-[#444748] group-hover:text-black transition-colors">
+              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] group-hover:text-black transition-colors font-bold">
                 Conexão Profissional
               </span>
               <span className="font-chivo font-bold text-xl text-[#1b1c1c] mt-1">LinkedIn</span>
@@ -70,14 +70,14 @@ export default function Contact() {
               rel="noreferrer"
               className="group flex flex-col border-b border-transparent hover:border-[#1b1c1c] pb-2 transition-all duration-300"
             >
-              <span className="font-chivo text-[10px] uppercase text-[#444748] group-hover:text-black transition-colors">
+              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] group-hover:text-black transition-colors font-bold">
                 Repositórios & Código
               </span>
               <span className="font-chivo font-bold text-xl text-[#1b1c1c] mt-1">GitHub</span>
             </a>
 
             <div className="group flex flex-col border-b border-transparent pb-2 transition-all duration-300">
-              <span className="font-chivo text-[10px] uppercase text-[#444748] block">
+              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] block font-bold">
                 Comunicação Direta
               </span>
               <div className="flex items-center justify-between mt-1">
@@ -86,7 +86,7 @@ export default function Contact() {
                 </a>
                 <button
                   onClick={handleCopyEmail}
-                  className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-chivo font-semibold border border-[#e3e2e2] text-[#444748] hover:border-[#1b1c1c] hover:text-[#1b1c1c] transition-colors bg-white uppercase tracking-wider"
+                  className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-chivo font-bold border border-[#e3e2e2] text-[#2d2e2f] hover:border-[#1b1c1c] hover:text-[#1b1c1c] transition-colors bg-white uppercase tracking-wider"
                 >
                   {copied ? (
                     <>
@@ -114,7 +114,7 @@ export default function Contact() {
                   <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c] mb-1">
                     Deixe uma Mensagem
                   </h3>
-                  <p className="font-serif text-sm text-[#444748] leading-relaxed">
+                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
                     Preencha o formulário e Anderson responderá no mesmo dia operacional.
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <h3 className="font-chivo font-bold text-xl text-[#1b1c1c]">Mensagem Enviada!</h3>
-                  <p className="font-serif text-sm text-[#444748] leading-relaxed">
+                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
                     Obrigado pelo seu contato, <strong>{formName}</strong>. A mensagem de assunto <em>"{formSubject || "Geral"}"</em> foi gravada com sucesso!
                   </p>
                 </div>
