@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="100%" height="100%">
+  <!-- Left A -->
+  <path d="M 65 20 L 20 140 L 42 140 L 70 56 L 98 140 L 120 140 Z" fill="#1b1c1c" />
+  <!-- Right A -->
+  <path d="M 135 20 L 90 140 L 112 140 L 140 56 L 168 140 L 190 140 Z" fill="#1b1c1c" />
+  <!-- Left A Crossbar (styled) -->
+  <polygon points="51,105 89,105 84,115 47,115" fill="#1b1c1c" />
+  <!-- Right A Crossbar (styled) -->
+  <polygon points="121,105 159,105 154,115 117,115" fill="#1b1c1c" />
+</svg>

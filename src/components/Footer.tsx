@@ -11,9 +11,15 @@ export default function Footer() {
     >
       <div className="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-16 py-12 max-w-7xl mx-auto gap-6">
         
-        {/* Brand Logo */}
-        <div className="text-lg md:text-xl font-chivo font-extrabold text-[#1b1c1c] uppercase tracking-tighter">
-          ANDERSON.MATHEUS
+        {/* Brand Logo and Subtitle */}
+        <div className="flex flex-col items-center md:items-start">
+          <div className="flex items-center gap-2 text-base md:text-lg font-chivo font-extrabold text-[#1b1c1c] uppercase tracking-widest">
+            <img src="/public/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
+            <span>A. ALBUQUERQUE</span>
+          </div>
+          <span className="font-chivo text-[9px] md:text-[10px] uppercase tracking-wider text-[#868382] mt-1 font-bold">
+            Operational Logistics • Systems • Automation
+          </span>
         </div>
 
         {/* Links */}

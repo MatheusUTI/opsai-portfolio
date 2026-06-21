@@ -53,7 +53,7 @@ export default function About() {
             {/* Architectural framing for the photograph */}
             <div className="absolute inset-4 border border-[#c4c7c7] pointer-events-none z-10"></div>
             <img
-              className="w-full h-full object-cover filter grayscale opacity-90 transition-all duration-500 group-hover:opacity-100 mix-blend-multiply"
+              className="w-full h-full object-cover opacity-95 transition-all duration-300 group-hover:opacity-100"
               alt="Anderson Matheus Albuquerque - Professional Portrait"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAGHly-0dRMXCAoBCPnDIbazdZYnGqtbmOJqx5NXe8emehhqcRV6TozYG9FkTTgythBCAByFRBqmNAQzZ1bitoz2wroI7b--4zYV6XWMmn_boWBRcSnHn-icn2dOv4SermtfSiIZpciDSC1d9mqXLjKzo31LHl-LZ7Yajdolgg-hpsfMIS8OYULt-TvZLlC2Kvw2K1abrS7DBJPT0rkv-UhDL0SFHrMJz_8EMfvNXVZXcHQvlCgNcgRx8LvSgQoyzNa_ElaWvtznGC"
               referrerPolicy="no-referrer"

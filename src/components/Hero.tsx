@@ -35,10 +35,13 @@ export default function Hero() {
         {/* Headline block spanning 10 cols, centered or aligned left */}
         <div className="md:col-span-10 md:col-start-2 text-center md:text-left flex flex-col items-center md:items-start space-y-8">
           
-          <div className="space-y-3">
-            <span className="font-chivo text-xs font-bold tracking-widest text-[#444748] uppercase bg-[#efeded] px-3 py-1 border border-[#e3e2e2]">
-              Anderson Matheus Albuquerque
-            </span>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <img src="/public/logo.svg" alt="AA Logo" className="w-6 h-6 object-contain" />
+              <span className="font-chivo text-xs font-bold tracking-widest text-[#444748] uppercase bg-[#efeded] px-3 py-1 border border-[#e3e2e2]">
+                Anderson Matheus Albuquerque
+              </span>
+            </div>
             <h1 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl sm:text-5xl md:text-6xl tracking-tighter leading-tight max-w-4xl">
               Supervisor Operacional de Logística e Criador de Soluções Digitais
             </h1>

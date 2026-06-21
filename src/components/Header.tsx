@@ -15,8 +15,9 @@ export default function Header() {
 
   const navLinks = [
     { label: "Sobre", href: "#sobre" },
+    { label: "Jornada", href: "#jornada" },
+    { label: "Impacto", href: "#impacto" },
     { label: "Atuação", href: "#atuacao" },
-    { label: "AISDD", href: "#aisdd" },
     { label: "Projetos", href: "#projetos" },
     { label: "Contato", href: "#contato" },
   ];
@@ -40,7 +41,7 @@ export default function Header() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#fbf9f9]/95 backdrop-blur-md border-b border-[#e3e2e2] py-4"
-          : "bg-transparent py-6"
+          : "bg-[#fbf9f9]/80 backdrop-blur-sm py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-16 flex justify-between items-center">
@@ -49,9 +50,10 @@ export default function Header() {
           id="header-logo-link"
           href="#"
           onClick={(e) => handleScrollTo(e, "#root")}
-          className="text-xl md:text-2xl font-bold font-chivo tracking-tighter text-[#1b1c1c] uppercase"
+          className="flex items-center gap-2 text-base md:text-lg font-extrabold font-chivo tracking-widest text-[#1b1c1c] uppercase"
         >
-          ANDERSON.MATHEUS
+          <img src="/public/logo.svg" alt="AA" className="w-5 h-5 object-contain" />
+          <span>A. ALBUQUERQUE</span>
         </a>
 
         {/* DESKTOP NAV */}
@@ -113,7 +115,7 @@ export default function Header() {
             onClick={(e) => handleScrollTo(e, "#contato")}
             className="w-full text-center border border-[#1b1c1c] text-[#1b1c1c] font-semibold font-chivo text-xs uppercase py-3 hover:bg-[#1b1c1c] hover:text-[#fbf9f9] transition-colors flex items-center justify-center"
           >
-            Falar com Anderson
+            Falar com A. Albuquerque
           </button>
         </div>
       </div>

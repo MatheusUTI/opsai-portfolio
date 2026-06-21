@@ -27,12 +27,12 @@ export interface MethodStep {
 export const portfolioData = {
   personal: {
     fullName: "Anderson Matheus Albuquerque",
-    shortName: "Anderson Matheus",
-    role: "OpsAI Systems Builder",
+    shortName: "A. Albuquerque",
+    role: "Supervisor Operacional de Logística e Criador de Soluções Digitais",
     subtitle: "Sistemas, automação e logística com IA aplicada",
-    tagline: "Transformo experiência operacional em soluções digitais para roteirização, controle, produtividade e tomada de decisão.",
+    tagline: "Transformo experiência operacional real em sistemas, automações e metodologias para otimizar processos, reduzir custos e apoiar decisões.",
     aboutHeading: "Experiência real, soluções digitais",
-    aboutText: "Sou Supervisor Operacional de Logística e desenvolvedor em formação prática, criando soluções para roteirização, controle operacional, automação de processos e desenvolvimento assistido por IA.\n\nMinha base vem da operação real: prazos, custos, rotas, coletas, entregas, performance e tomada de decisão diária. Uso essa vivência para construir ferramentas práticas, eficientes e orientadas a dados.",
+    aboutText: "Anderson Matheus Albuquerque atua como Supervisor Operacional de Logística e desenvolve soluções digitais orientadas à resolução de problemas reais.",
   },
   links: {
     github: "https://github.com/andersonmatheusalbuquerque",
