@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { portfolioData } from "../data/portfolioData";
-import { Cpu, Server, Laptop, Smartphone, FileSpreadsheet, Layers, Box } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 export default function Stack() {
   const { stack } = portfolioData;
@@ -9,47 +9,29 @@ export default function Stack() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   const categories = [
-    { id: "all", label: "Tudo", icon: Layers },
-    { id: "frontend", label: "Frontend", icon: Laptop },
-    { id: "mobile", label: "Mobile", icon: Smartphone },
-    { id: "backend", label: "Backend & Dados", icon: Server },
-    { id: "logistics", label: "Operação/Planilhas", icon: FileSpreadsheet },
-    { id: "tools", label: "IA & Git", icon: Cpu }
+    { id: "all", label: "Tudo" },
+    { id: "frontend", label: "Frontend" },
+    { id: "mobile", label: "Mobile" },
+    { id: "backend", label: "Backend & Dados" },
+    { id: "logistics", label: "Operação/Planilhas" },
+    { id: "tools", label: "IA & Ferramentas" }
   ];
 
-  // Map category code to human readable label & detail notes
   const techDetails: Record<string, string> = {
-    "React": "Criação de aplicativos responsivos, rápidos e integrados com APIs.",
-    "Vite": "Empacotamento veloz do frontend com carregamento instantâneo no desenvolvimento.",
-    "Tailwind CSS": "Estilização avançada com classes utilitárias, garantindo consistência visual.",
-    "Supabase": "Banco de dados Postgres serverless seguro para persistência ágil de dados operacionais.",
-    "Python": "Scripts de automação, manipulação de arquivos pesados, limpeza de CSV e inteligência artificial.",
-    "Kotlin": "Desenvolvimento nativo Android de alta robustez com tipagem estática e segurança de nulos.",
-    "Android": "Desenvolvimento focado em coletores de dados e aparelhos móveis para expedição no pátio logístico.",
-    "SQLite": "Banco de dados local veloz e embutido para soluções que necessitam rodar sem sinal de internet.",
-    "Firebase": "Banco NoSQL em tempo real, notificações push e autenticação robusta para apps de campo.",
-    "GitHub": "Controle de versão total das especificações, commits documentados e controle do AISDD.",
-    "Excel": "O coração da logística operacional moderna — exportação, cruzamento de matriz de distâncias e tabelas dinâmicas.",
-    "CSV": "Interface principal para transporte de dados brutos entre faturamentos corporativos e robôs Python.",
-    "SSW": "O mais tradicional TMS das transportadoras brasileiras, de onde se extraem os dados que alimentam os robôs de cálculo.",
-    "IA aplicada ao desenvolvimento": "Adoção sistêmica de ferramentas como Copilot e Gemini via AISDD para codificação assertiva."
-  };
-
-  const getTechColor = (category: string) => {
-    switch (category) {
-      case "frontend":
-        return "bg-cyan-50 text-cyan-800 border-cyan-200 hover:bg-cyan-100";
-      case "mobile":
-        return "bg-purple-50 text-purple-800 border-purple-200 hover:bg-purple-100";
-      case "backend":
-        return "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100";
-      case "logistics":
-        return "bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100";
-      case "methodology":
-      case "tools":
-      default:
-        return "bg-slate-50 text-slate-800 border-slate-200 hover:bg-slate-100";
-    }
+    "React": "Criação de aplicativos operacionais rápidos e interfaces limpas baseadas em componentes funcionais.",
+    "Vite": "Compilação veloz do ecossistema de frontend, garantindo desenvolvimento instantâneo.",
+    "Tailwind CSS": "Adoção de padrões de estilização pragmáticos por classes utilitárias sem sobrecarga de arquivos CSS.",
+    "Supabase": "Banco de dados Postgres robusto para persistência segura de dados de frota e expedidores.",
+    "Python": "Desenvolvimento de rotinas para limpeza de CSV, parse automatizado e inteligência artificial aplicada.",
+    "Kotlin": "Codificação estável nativa focada em coletores de dados móveis sob o método AISDD.",
+    "Android": "Integração direcionada aos dispositivos e scanners de transporte utilizados no chão de fábrica.",
+    "SQLite": "Banco offline local de alta performance, mantendo operações ativas sem rede cabeada.",
+    "Firebase": "Banco de dados sincronizado em tempo real com excelente infraestrutura de alertas locais.",
+    "GitHub": "Rastreabilidade completa de especificações, logs de decisões e auditorias de código assistido.",
+    "Excel": "Intercâmbio de dados essenciais em pátios logísticos, cruzamento de matrizes de fretes e cubagens.",
+    "CSV": "Padrão leve de intercâmbio de dados entre faturamentos estáticos corporativos e sistemas web.",
+    "SSW": "O sistema TMS predominante na logística brasileira, servindo como fonte de dados brutos de rotas.",
+    "IA aplicada ao desenvolvimento": "Adoção sistêmica de LLMs estruturadas por regras estritas para aumentar a vazão de código testado."
   };
 
   const filteredStack = activeCategory === "all" 
@@ -62,86 +44,75 @@ export default function Stack() {
       });
 
   return (
-    <section id="stack" className="py-24 bg-white border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Section Header */}
-        <div id="stack-header" className="max-w-2xl mb-16 space-y-3">
-          <span className="text-cyan-700 font-mono text-xs uppercase tracking-widest font-semibold block">
-            Tecnologias Práticas
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Stack & Ferramentas
-          </h2>
-          <p className="text-slate-650 text-sm sm:text-base leading-relaxed">
-            Ferramentas selecionadas com base no seu poder de resolução offline, velocidade de entrega e estabilidade operacional.
-          </p>
-        </div>
-
-        {/* Filter categories tabs selector */}
-        <div id="stack-filter-tabs" className="flex flex-wrap gap-2 mb-12">
-          {categories.map((cat) => {
-            const IconComponent = cat.icon;
-            const isSelected = activeCategory === cat.id;
-            return (
-              <button
-                id={`stack-filter-btn-${cat.id}`}
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center space-x-2 px-4 py-2.5 rounded-lg border text-xs font-semibold font-mono transition-all duration-200 ${
-                  isSelected
-                    ? "bg-slate-950 text-white border-slate-900 shadow-sm"
-                    : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
-                }`}
-              >
-                <IconComponent className="w-3.5 h-3.5" />
-                <span>{cat.label}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Badges Grid of stack */}
-        <div id="stack-badges-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredStack.map((item, index) => {
-            const detailText = techDetails[item.label] || "Sem notas adicionais disponíveis.";
-            const badgeTheme = getTechColor(item.category);
-
-            return (
-              <div
-                id={`stack-item-card-${index}`}
-                key={item.label}
-                className="p-5 rounded-xl border border-slate-100 hover:border-slate-350 bg-white/60 hover:bg-slate-50/50 transition-all duration-205 flex flex-col justify-between space-y-3 shadow-inner shadow-slate-50/50"
-              >
-                <div>
-                  <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-mono font-bold border uppercase tracking-wider ${badgeTheme}`}>
-                    {item.label}
-                  </span>
-                  
-                  <p className="text-xs text-slate-500 mt-3 leading-relaxed">
-                    {detailText}
-                  </p>
-                </div>
-
-                <div className="h-px bg-slate-50 w-full" />
-                
-                <span className="text-[9px] font-mono uppercase text-slate-400 tracking-widest text-right">
-                  STATUS: PRONTO
-                </span>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Informative Note */}
-        <div id="stack-notes" className="mt-12 bg-slate-950 p-6 rounded-2xl border border-slate-900 text-slate-350 text-xs font-mono flex items-center gap-3">
-          <Box className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-          <p className="leading-relaxed">
-            <strong>Critério de Stack:</strong> Todo o ecossistema foi definido visando compatibilidade com o <strong>AISDD Framework</strong>. Isso garante que copilotos de desenvolvimento possuam vasto conhecimento de sintaxe das classes, reduzindo falsos positivos de digitação de código.
-          </p>
-        </div>
-
+    <section
+      id="stack"
+      className="w-full px-6 md:px-16 py-16 md:py-32 max-w-7xl mx-auto border-t border-[#e3e2e2] bg-[#fbf9f9]"
+    >
+      {/* Section Header */}
+      <div className="flex flex-col gap-6 mb-12">
+        <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight leading-none">
+          Tecnologias Práticas
+        </h2>
+        <p className="font-serif text-base md:text-lg text-[#444748] max-w-2xl leading-relaxed">
+          O ecossistema técnico do Anderson foca na velocidade de entrega, funcionamento offline robusto e emparelhamento eficiente com a inteligência artificial.
+        </p>
       </div>
+
+      {/* Modern minimal filters */}
+      <div className="flex flex-wrap gap-3 mb-12 border-b border-[#e3e2e2] pb-6">
+        {categories.map((cat) => {
+          const isSelected = activeCategory === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`px-4 py-2 font-chivo text-xs font-semibold uppercase tracking-wider transition-all duration-200 border ${
+                isSelected
+                  ? "bg-[#1b1c1c] text-white border-[#1b1c1c]"
+                  : "bg-white text-[#444748] border-[#e3e2e2] hover:border-[#1b1c1c]"
+              }`}
+            >
+              {cat.label}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Grid of stack item cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredStack.map((item, idx) => {
+          const description = techDetails[item.label] || "Sem notas adicionais disponíveis.";
+          return (
+            <div
+              key={idx}
+              className="border border-[#e3e2e2] p-6 bg-white flex flex-col justify-between gap-4 hover:border-[#1b1c1c] transition-colors duration-300"
+            >
+              <div className="space-y-3">
+                <span className="inline-block px-3 py-1 bg-[#efeded] text-[#1b1c1c] font-chivo text-[10px] font-bold uppercase tracking-wider">
+                  {item.label}
+                </span>
+                <p className="font-serif text-sm text-[#444748] leading-relaxed">
+                  {description}
+                </p>
+              </div>
+
+              <div className="border-t border-[#efeded] pt-3 flex justify-between items-center text-[9px] font-chivo uppercase tracking-wider text-[#cac6c4]">
+                <span>Status: Ativo</span>
+                <span>AISDD Ok</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Conceptual Footer Card */}
+      <div className="mt-12 border border-[#e3e2e2] p-6 bg-white flex flex-col md:flex-row items-center gap-4">
+        <BookOpen className="w-6 h-6 text-[#1b1c1c] flex-shrink-0" />
+        <p className="font-serif text-sm text-[#444748] leading-relaxed">
+          <strong>Critério de Seleção:</strong> Todas as ferramentas escolhidas seguem as restrições de arquitetura estipuladas no <strong>AISDD Framework</strong>, facilitando revisões seguras e o desenvolvimento de soluções robustas de tecnologia de campo.
+        </p>
+      </div>
+
     </section>
   );
 }

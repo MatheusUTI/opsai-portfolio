@@ -16,7 +16,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div id="topo" className="min-h-screen bg-white text-slate-900 selection:bg-slate-900 selection:text-white">
+    <div id="topo" className="min-h-screen bg-[#fbf9f9] text-[#1b1c1c] selection:bg-[#1b1c1c] selection:text-[#fbf9f9]">
       {/* Header */}
       <Header />
 

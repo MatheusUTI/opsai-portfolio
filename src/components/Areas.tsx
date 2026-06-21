@@ -1,90 +1,58 @@
 import { portfolioData } from "../data/portfolioData";
-import { Truck, Layers, DollarSign, Cpu, Database, Compass, LucideIcon } from "lucide-react";
+import { Truck, Cpu, Settings, Award, Layers, Database } from "lucide-react";
 
-// Helper mapper for Lucide Icons
-const iconMap: Record<string, LucideIcon> = {
-  Truck: Truck,
-  Layers: Layers,
-  DollarSign: DollarSign,
-  Cpu: Cpu,
-  Database: Database,
-  Compass: Compass,
+const iconMap: Record<string, any> = {
+  "Truck": Truck,
+  "Cpu": Cpu,
+  "Settings": Settings,
+  "Award": Award,
+  "Layers": Layers,
+  "Database": Database
 };
 
 export default function Areas() {
   const { areas } = portfolioData;
 
   return (
-    <section id="areas-atuacao" className="py-24 bg-slate-50/50 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="atuacao"
+      className="w-full px-6 md:px-16 py-16 md:py-32 max-w-7xl mx-auto"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         
-        {/* Section Header */}
-        <div id="areas-header" className="max-w-2xl mb-16 space-y-3">
-          <span className="text-cyan-700 font-mono text-xs uppercase tracking-widest font-semibold block">
-            Competências Práticas
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Áreas de Atuação
+        {/* Left column heading and desc */}
+        <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
+          <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight leading-none">
+            Atuação
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Intersecção direta entre fluxo de materiais diário e inteligência de software. Soluções focadas no ganho real de tempo, redução de retrabalho e controle absoluto de custos.
+          <p className="font-serif text-base md:text-lg text-[#444748] max-w-sm leading-relaxed">
+            Foco na interseção entre tecnologia e operações de logística diária, integrando dados e ferramentas práticas para acelerar resultados.
           </p>
         </div>
 
-        {/* Grid of Cards */}
-        <div id="areas-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {areas.map((area, index) => {
-            const IconComponent = iconMap[area.iconName] || Compass;
-
-            return (
-              <div
-                id={`area-card-${index}`}
-                key={area.title}
-                className="group bg-white p-8 rounded-xl border border-slate-200/80 hover:border-slate-350 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  {/* Icon Container */}
-                  <div className="w-12 h-12 rounded-lg bg-slate-950 text-white flex items-center justify-center transition-colors duration-300 group-hover:bg-cyan-600">
-                    <IconComponent className="w-6 h-6" />
+        {/* Right column cards grid */}
+        <div className="col-span-12 md:col-span-8 mt-8 md:mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {areas.map((area, idx) => {
+              const IconComp = iconMap[area.iconName] || Truck;
+              return (
+                <div
+                  key={idx}
+                  className="border border-[#e3e2e2] p-8 flex flex-col gap-4 bg-white group hover:border-[#1b1c1c] transition-all duration-300"
+                >
+                  <div className="text-[#1b1c1c] group-hover:scale-105 transition-transform duration-300 mb-2">
+                    <IconComp className="w-8 h-8 stroke-[1.2]" />
                   </div>
-                  
-                  {/* Card Info */}
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-cyan-950 transition-colors duration-200">
+                  <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c]">
                     {area.title}
                   </h3>
-                  
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="font-serif text-sm text-[#444748] leading-relaxed flex-grow">
                     {area.description}
                   </p>
                 </div>
-
-                {/* Subtle bottom indicator */}
-                <div className="mt-6 pt-4 border-t border-slate-50 flex items-center justify-between text-xs font-mono text-slate-400">
-                  <span>OPERATIONAL ENGINE</span>
-                  <span className="text-cyan-600 font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    ➔
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Highlight footer */}
-        <div className="mt-12 bg-slate-950 text-slate-200 rounded-xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between border border-slate-900 shadow-lg">
-          <div className="mb-4 md:mb-0 space-y-1">
-            <h4 className="font-mono text-sm font-bold text-white flex items-center gap-2">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full inline-block" />
-              SISTEMAS SOB MEDIDA, SEM CÓDIGO INÚTIL
-            </h4>
-            <p className="text-xs text-slate-400">Filtro no que realmente move carretas, diminui faltas de carga e melhora a margem operacional.</p>
+              );
+            })}
           </div>
-          <a
-            href="#contato"
-            className="px-4 py-2 bg-white text-slate-950 hover:bg-slate-100 text-xs font-bold font-mono rounded transition-colors uppercase"
-          >
-            Acelerar Projeto ➔
-          </a>
         </div>
 
       </div>
