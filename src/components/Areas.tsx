@@ -1,60 +1,66 @@
-import { portfolioData } from "../data/portfolioData";
-import { Truck, Cpu, Settings, Award, Layers, Database } from "lucide-react";
-
-const iconMap: Record<string, any> = {
-  "Truck": Truck,
-  "Cpu": Cpu,
-  "Settings": Settings,
-  "Award": Award,
-  "Layers": Layers,
-  "Database": Database
-};
+import React from "react";
+import { Eye, Truck, Users, Cpu } from "lucide-react";
 
 export default function Areas() {
-  const { areas } = portfolioData;
+  const cards = [
+    {
+      title: "Visão Operacional",
+      desc: "Entendimento prático de fretes, expedição, coletas e produtividade de armazéns.",
+      icon: Eye
+    },
+    {
+      title: "Roteirização Técnica",
+      desc: "Planejamento inteligente de frotas e distribuição urbana otimizando percursos.",
+      icon: Truck
+    },
+    {
+      title: "Liderança de Equipes",
+      desc: "Coordenação de motoristas, ajudantes e operadores com foco em performance e prazos.",
+      icon: Users
+    },
+    {
+      title: "Soluções Digitais",
+      desc: "Criação de aplicativos, automações e scripts que otimizam tarefas analíticas diárias.",
+      icon: Cpu
+    }
+  ];
 
   return (
     <section
       id="atuacao"
-      className="w-full px-6 md:px-16 py-16 md:py-32 max-w-7xl mx-auto"
+      className="w-full px-6 md:px-16 py-16 md:py-24 max-w-7xl mx-auto border-t border-gray-200 bg-white"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        
-        {/* Left column heading and desc */}
-        <div className="col-span-12 md:col-span-4 flex flex-col gap-6">
-          <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tight leading-none">
-            Atuação
-          </h2>
-          <p className="font-serif text-base md:text-lg text-[#2d2e2f] max-w-sm leading-relaxed font-semibold">
-            Atuo na interseção entre operações, tecnologia e desenvolvimento de soluções digitais, utilizando experiência prática para otimizar processos e apoiar decisões.
-          </p>
-        </div>
+      <div className="flex flex-col gap-4 mb-16">
+        <h2 className="font-display font-black text-black text-3xl md:text-5xl tracking-tight uppercase leading-none">
+          Atuação de Impacto
+        </h2>
+        <p className="font-display text-[10px] text-gray-500 uppercase tracking-widest font-black">
+          COMPETÊNCIAS MENSURÁVEIS DO SETOR
+        </p>
+      </div>
 
-        {/* Right column cards grid */}
-        <div className="col-span-12 md:col-span-8 mt-8 md:mt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {areas.map((area, idx) => {
-              const IconComp = iconMap[area.iconName] || Truck;
-              return (
-                <div
-                  key={idx}
-                  className="border border-[#e3e2e2] p-8 flex flex-col gap-4 bg-white group hover:border-[#1b1c1c] transition-all duration-300"
-                >
-                  <div className="text-[#1b1c1c] group-hover:scale-105 transition-transform duration-300 mb-2">
-                    <IconComp className="w-8 h-8 stroke-[1.2]" />
-                  </div>
-                  <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c]">
-                    {area.title}
-                  </h3>
-                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed flex-grow font-semibold">
-                    {area.description}
-                  </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {cards.map((card, idx) => {
+          const Icon = card.icon;
+          return (
+            <div
+              key={idx}
+              className="border-2 border-black p-6 flex flex-col justify-between gap-6 hover:bg-gray-50 transition-colors duration-300 rounded-none bg-white"
+            >
+              <div className="space-y-4">
+                <div className="p-3.5 bg-black text-white inline-block rounded-none">
+                  <Icon className="w-5 h-5" />
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
+                <h3 className="font-display font-bold text-lg text-black uppercase tracking-tight">
+                  {card.title}
+                </h3>
+                <p className="font-sans text-sm text-gray-700 leading-relaxed font-semibold">
+                  {card.desc}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

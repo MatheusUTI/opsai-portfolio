@@ -1,215 +1,94 @@
 import React, { useState } from "react";
 import { portfolioData } from "../data/portfolioData";
-import { Copy, Check, Send, CheckCircle2 } from "lucide-react";
+import { Linkedin, Github, Mail, Copy, Check } from "lucide-react";
 
 export default function Contact() {
-  const { github, linkedin, email, emailRaw } = portfolioData.links;
+  const { linkedin, github } = portfolioData.links;
+  const rawEmail = "andersonmatheusalbuquerque@gmail.com";
   const [copied, setCopied] = useState(false);
-  const [formSent, setFormSent] = useState(false);
 
-  const [formName, setFormName] = useState("");
-  const [formEmail, setFormEmail] = useState("");
-  const [formSubject, setFormSubject] = useState("");
-  const [formMsg, setFormMsg] = useState("");
-
-  const handleCopyEmail = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    try {
-      await navigator.clipboard.writeText(emailRaw);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Falha ao copiar", err);
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formName || !formEmail) return;
-    setFormSent(true);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(rawEmail);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
     <section
       id="contato"
-      className="w-full px-6 md:px-16 py-16 md:py-32 max-w-7xl mx-auto border-t border-[#e3e2e2]"
+      className="w-full px-6 md:px-16 py-16 md:py-28 max-w-7xl mx-auto border-t border-gray-200 bg-white"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
         
-        {/* Left Column: Direct channels and descriptions (5 cols) */}
-        <div className="lg:col-span-5 flex flex-col gap-8">
-          <div>
-            <span className="font-chivo text-xs font-bold text-[#2d2e2f] uppercase tracking-widest block mb-3">
-              Próximos Passos
-            </span>
-            <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tighter leading-none mb-6">
-              Vamos Conversar
-            </h2>
-            <p className="font-serif text-base text-[#2d2e2f] leading-relaxed max-w-md font-bold">
-              Interessado em discutir operações, automação, arquitetura de soluções ou desenvolvimento orientado por especificações?
-            </p>
-          </div>
-
-          {/* Social and Contact Links with Editorial styling */}
-          <div className="flex flex-col border-t border-[#e3e2e2] pt-6 gap-6">
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex flex-col border-b border-transparent hover:border-[#1b1c1c] pb-2 transition-all duration-300"
-            >
-              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] group-hover:text-black transition-colors font-bold">
-                Conexão Profissional
-              </span>
-              <span className="font-chivo font-bold text-xl text-[#1b1c1c] mt-1">LinkedIn</span>
-            </a>
-
-            <a
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex flex-col border-b border-transparent hover:border-[#1b1c1c] pb-2 transition-all duration-300"
-            >
-              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] group-hover:text-black transition-colors font-bold">
-                Repositórios & Código
-              </span>
-              <span className="font-chivo font-bold text-xl text-[#1b1c1c] mt-1">GitHub</span>
-            </a>
-
-            <div className="group flex flex-col border-b border-transparent pb-2 transition-all duration-300">
-              <span className="font-chivo text-[10px] uppercase text-[#2d2e2f] block font-bold">
-                Comunicação Direta
-              </span>
-              <div className="flex items-center justify-between mt-1">
-                <a href={email} className="font-chivo font-bold text-xl text-[#1b1c1c] hover:underline">
-                  Email
-                </a>
-                <button
-                  onClick={handleCopyEmail}
-                  className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-chivo font-bold border border-[#e3e2e2] text-[#2d2e2f] hover:border-[#1b1c1c] hover:text-[#1b1c1c] transition-colors bg-white uppercase tracking-wider"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3 h-3 text-emerald-600" />
-                      <span>Copiado</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3 h-3" />
-                      <span>Copiar Endereço</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
+        {/* Title */}
+        <div className="space-y-4">
+          <h2 className="font-display font-black text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight">
+            Vamos otimizar sua operação com inteligência?
+          </h2>
+          <p className="font-display text-[10px] text-gray-500 uppercase tracking-widest font-black">
+            CANAIS DIRETOS DE SUCESSO
+          </p>
         </div>
 
-        {/* Right Column: High-end interactive Editorial Form (7 cols) */}
-        <div className="lg:col-span-7">
-          <div className="border border-[#e3e2e2] bg-white p-6 sm:p-8">
-            {!formSent ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <h3 className="font-chivo font-semibold text-lg text-[#1b1c1c] mb-1">
-                    Deixe uma Mensagem
-                  </h3>
-                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
-                    Preencha o formulário e Anderson responderá no mesmo dia operacional.
-                  </p>
-                </div>
+        <p className="font-sans text-base sm:text-lg text-gray-700 leading-relaxed max-w-2xl">
+          Entre em contato hoje para discutir melhorias de processos logísticos, roteirização técnica inteligente, desenvolvimento de sistemas integrados ou parcerias assistidas por Inteligência Artificial.
+        </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-1.5">
-                    <label className="font-chivo text-xs font-semibold text-[#1b1c1c] uppercase tracking-wider" htmlFor="name">
-                      Seu Nome *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formName}
-                      onChange={(e) => setFormName(e.target.value)}
-                      placeholder="Ex: Nome Completo"
-                      className="text-sm p-3 border border-[#e3e2e2] bg-white focus:outline-none focus:border-[#1b1c1c] text-[#1b1c1c] placeholder:text-[#cac6c4] font-serif"
-                    />
-                  </div>
+        {/* 3 Main Buttons as requested */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full pt-4">
+          <a
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2.5 px-6 py-4.5 border-2 border-black bg-black text-white hover:bg-gray-800 font-bold font-display text-xs uppercase tracking-widest transition-all duration-300 rounded-none hover:-translate-y-0.5 active:translate-y-0 w-full"
+          >
+            <Linkedin className="w-4 h-4" />
+            <span>LinkedIn</span>
+          </a>
+          
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2.5 px-6 py-4.5 border-2 border-black bg-white text-black hover:bg-gray-50 font-bold font-display text-xs uppercase tracking-widest transition-all duration-300 rounded-none hover:-translate-y-0.5 active:translate-y-0 w-full"
+          >
+            <Github className="w-4 h-4" />
+            <span>GitHub</span>
+          </a>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label className="font-chivo text-xs font-semibold text-[#1b1c1c] uppercase tracking-wider" htmlFor="email">
-                      Seu E-mail *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formEmail}
-                      onChange={(e) => setFormEmail(e.target.value)}
-                      placeholder="Ex: exemplo@email.com"
-                      className="text-sm p-3 border border-[#e3e2e2] bg-white focus:outline-none focus:border-[#1b1c1c] text-[#1b1c1c] placeholder:text-[#cac6c4] font-serif"
-                    />
-                  </div>
-                </div>
+          <a
+            href={`mailto:${rawEmail}`}
+            className="flex items-center justify-center gap-2.5 px-6 py-4.5 border-2 border-black bg-white text-black hover:bg-gray-50 font-bold font-display text-xs uppercase tracking-widest transition-all duration-300 rounded-none hover:-translate-y-0.5 active:translate-y-0 w-full"
+          >
+            <Mail className="w-4 h-4" />
+            <span>Enviar E-mail</span>
+          </a>
+        </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-chivo text-xs font-semibold text-[#1b1c1c] uppercase tracking-wider" htmlFor="subject">
-                    Assunto
-                  </label>
-                  <input
-                    type="text"
-                    value={formSubject}
-                    onChange={(e) => setFormSubject(e.target.value)}
-                    placeholder="Ex: Roteirização de Carga, Automação"
-                    className="text-sm p-3 border border-[#e3e2e2] bg-white focus:outline-none focus:border-[#1b1c1c] text-[#1b1c1c] placeholder:text-[#cac6c4] font-serif"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-chivo text-xs font-semibold text-[#1b1c1c] uppercase tracking-wider" htmlFor="message">
-                    Mensagem *
-                  </label>
-                  <textarea
-                    rows={4}
-                    required
-                    value={formMsg}
-                    onChange={(e) => setFormMsg(e.target.value)}
-                    placeholder="Escreva brevemente sobre seus objetivos..."
-                    className="text-sm p-3 border border-[#e3e2e2] bg-white focus:outline-none focus:border-[#1b1c1c] text-[#1b1c1c] placeholder:text-[#cac6c4] font-serif resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#1b1c1c] text-white py-3.5 uppercase font-chivo font-semibold tracking-wider text-xs hover:bg-slate-800 transition-colors hover:-translate-y-0.5 active:translate-y-0 duration-300"
-                >
-                  <span>Enviar Mensagem</span>
-                  <Send className="w-3.5 h-3.5" />
-                </button>
-              </form>
-            ) : (
-              <div className="py-12 text-center space-y-6 max-w-md mx-auto">
-                <div className="w-16 h-16 bg-[#efeded] text-[#1b1c1c] flex items-center justify-center mx-auto border border-[#e3e2e2]">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="font-chivo font-bold text-xl text-[#1b1c1c]">Mensagem Enviada!</h3>
-                  <p className="font-serif text-sm text-[#2d2e2f] leading-relaxed font-semibold">
-                    Obrigado pelo seu contato, <strong>{formName}</strong>. A mensagem de assunto <em>"{formSubject || "Geral"}"</em> foi gravada com sucesso!
-                  </p>
-                </div>
-                <button
-                  onClick={() => {
-                    setFormSent(false);
-                    setFormName("");
-                    setFormEmail("");
-                    setFormSubject("");
-                    setFormMsg("");
-                  }}
-                  className="text-xs font-chivo font-bold text-cyan-800 hover:text-black uppercase tracking-wider hover:underline"
-                >
-                  Preencher Novamente
-                </button>
-              </div>
-            )}
+        {/* Quick Email Box with Copy Feature */}
+        <div className="mt-8 border-t border-gray-100 pt-8 w-full flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50 px-6 py-4 rounded-none border border-gray-200">
+          <div className="flex items-center gap-3">
+            <Mail className="w-5 h-5 text-black" />
+            <span className="font-mono text-sm text-black font-semibold break-all select-all">
+              {rawEmail}
+            </span>
           </div>
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-2 px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 text-xs font-bold font-display uppercase tracking-wider rounded-none shrink-0"
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[3]" />
+                <span>Copiado!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-3.5 h-3.5" />
+                <span>Copiar E-mail</span>
+              </>
+            )}
+          </button>
         </div>
 
       </div>

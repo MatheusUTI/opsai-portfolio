@@ -1,10 +1,7 @@
 import React from "react";
-import { portfolioData } from "../data/portfolioData";
 
 export default function Hero() {
-  const { linkedin, github } = portfolioData.links;
-
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, id: string) => {
     e.preventDefault();
     const target = document.querySelector(id);
     if (target) {
@@ -19,71 +16,62 @@ export default function Hero() {
   return (
     <section
       id="topo"
-      className="w-full px-6 md:px-16 pt-32 pb-24 md:py-40 min-h-[90vh] flex items-center max-w-7xl mx-auto relative overflow-hidden animate-fade-in-up"
+      className="w-full px-6 md:px-16 pt-32 pb-16 md:pt-44 md:pb-28 max-w-7xl mx-auto bg-white animate-fade-in-up"
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10 w-full">
-        {/* Headline block spanning 10 cols, centered or aligned left */}
-        <div className="md:col-span-10 md:col-start-2 text-center md:text-left flex flex-col items-center md:items-start space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Left Column: Text Content */}
+        <div className="lg:col-span-7 flex flex-col items-start gap-6 text-left">
           
           <div className="space-y-4">
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <img src="/logo.svg" alt="AA Logo" className="w-6 h-6 object-contain" />
-              <span className="font-chivo text-xs font-bold tracking-widest text-[#1b1c1c] uppercase bg-[#efeded] px-3 py-1 border border-[#e3e2e2]">
-                Anderson Matheus Albuquerque
-              </span>
-            </div>
-            <h1 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl sm:text-5xl md:text-6xl tracking-tighter leading-tight max-w-4xl">
-              Supervisor Operacional de Logística &amp; Criador de Soluções Digitais
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-black text-black tracking-tighter uppercase leading-none">
+              A. Albuquerque
             </h1>
+            <p className="font-display text-lg sm:text-xl md:text-2xl font-extrabold text-black uppercase tracking-wider leading-tight">
+              Supervisor Operacional de Logística <br className="hidden sm:block" />
+              e Criador de Soluções Digitais
+            </p>
           </div>
 
-          <p className="font-serif text-lg md:text-xl text-[#2d2e2f] max-w-2xl md:ml-12 border-l-2 border-[#1b1c1c] pl-6 leading-relaxed font-semibold">
-            Desenvolvo soluções digitais orientadas por operações reais, unindo logística, automação e desenvolvimento assistido por Inteligência Artificial.
+          <p className="font-sans text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl">
+            Transformo a complexidade operacional em processos inteligentes, soluções digitais e resultados mensuráveis.
           </p>
 
-          {/* 3 CTAs display */}
-          <div className="flex flex-wrap gap-4 md:ml-12 w-full justify-center md:justify-start pt-2">
-            <a
-              href={linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center px-6 py-3.5 bg-[#1b1c1c] text-white hover:bg-[#374151] font-bold font-chivo text-xs uppercase transition-all duration-300 tracking-wider hover:-translate-y-0.5 active:translate-y-0"
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4">
+            <button
+              onClick={(e) => handleScrollTo(e, "#projetos")}
+              className="px-8 py-4 bg-black text-white hover:bg-gray-800 font-bold font-display text-xs uppercase tracking-widest transition-all duration-300 rounded-none hover:-translate-y-0.5 active:translate-y-0 text-center"
             >
-              LinkedIn
-            </a>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center items-center px-6 py-3.5 border-2 border-[#1b1c1c] text-[#1b1c1c] bg-white hover:bg-slate-50 font-bold font-chivo text-xs uppercase transition-all duration-300 tracking-wider hover:-translate-y-0.5 active:translate-y-0"
-            >
-              GitHub
-            </a>
-            <a
+              Ver Projetos
+            </button>
+            <button
               onClick={(e) => handleScrollTo(e, "#contato")}
-              href="#contato"
-              className="inline-flex justify-center items-center px-6 py-3.5 border-2 border-transparent bg-slate-100 text-[#1b1c1c] hover:bg-slate-200 font-bold font-chivo text-xs uppercase transition-all duration-300 tracking-wider hover:-translate-y-0.5 active:translate-y-0"
+              className="px-8 py-4 border-2 border-black bg-white text-black hover:bg-gray-50 font-bold font-display text-xs uppercase tracking-widest transition-all duration-300 rounded-none hover:-translate-y-0.5 active:translate-y-0 text-center"
             >
-              Entrar em Contato
-            </a>
+              Vamos Conversar
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Structural Line Grid in Background (Subtle) */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 hidden md:grid grid-cols-12 gap-8 px-16 max-w-7xl mx-auto">
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="border-r border-[#e3e2e2] h-full"></div>
-        <div className="h-full"></div>
+        {/* Right Column: Professional Portrait as requested */}
+        <div className="lg:col-span-5 flex justify-center items-center">
+          <div className="w-full max-w-sm aspect-[3/4] md:aspect-[4/5] bg-gray-100 border-2 border-black relative overflow-hidden group">
+            {/* Minimalist Grid overlay */}
+            <div className="absolute inset-4 border border-black/10 pointer-events-none z-10"></div>
+            <img
+              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              alt="A. Albuquerque - Professional Portrait"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAGHly-0dRMXCAoBCPnDIbazdZYnGqtbmOJqx5NXe8emehhqcRV6TozYG9FkTTgythBCAByFRBqmNAQzZ1bitoz2wroI7b--4zYV6XWMmn_boWBRcSnHn-icn2dOv4SermtfSiIZpciDSC1d9mqXLjKzo31LHl-LZ7Yajdolgg-hpsfMIS8OYULt-TvZLlC2Kvw2K1abrS7DBJPT0rkv-UhDL0SFHrMJz_8EMfvNXVZXcHQvlCgNcgRx8LvSgQoyzNa_ElaWvtznGC"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute bottom-4 left-4 z-20">
+              <span className="font-display text-[9px] text-white bg-black px-2.5 py-1 uppercase tracking-widest font-black">
+                STITCH DESIGN SYSTEM
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
