@@ -2,7 +2,7 @@ import { useState } from "react";
 import { portfolioData, AISDDDoc } from "../data/portfolioData";
 import { BookOpen, CheckSquare, Layers, AlertTriangle, FileCode, CheckCircle2, ChevronRight, HelpCircle } from "lucide-react";
 
-export default function AISDD() {
+export default function AISDDSection() {
   const { heading, description, quote, principles, documents } = portfolioData.aisdd;
   
   // State for active document to view sample data

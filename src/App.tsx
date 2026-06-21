@@ -8,7 +8,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Areas from "./components/Areas";
 import Projects from "./components/Projects";
-import AISDD from "./components/AISDD";
+import AISDDSection from "./components/AISDDSection";
 import Stack from "./components/Stack";
 import Method from "./components/Method";
 import Contact from "./components/Contact";
@@ -33,7 +33,7 @@ export default function App() {
       <Projects />
 
       {/* AISDD Section */}
-      <AISDD />
+      <AISDDSection />
 
       {/* Stack Section */}
       <Stack />
