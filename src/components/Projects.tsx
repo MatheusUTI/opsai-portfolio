@@ -144,33 +144,33 @@ data class Tarefa(
             </h3>
             
             <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              Sistema para apoiar roteirização operacional, controle de entregas, coletas, custos, performance e programação diária de veículos.
+              Plataforma desenvolvida para apoiar operações logísticas através de roteirização assistida, análise operacional e planejamento diário de entregas.
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
               <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
-                Features Principais
+                Principais Funcionalidades
               </h4>
               <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Algoritmo de roteirização dinâmico</span>
+                  <span>Roteirização operacional assistida</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Rastreamento e programação diária</span>
+                  <span>Programação diária de veículos</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Análise e precificação de custos de frete</span>
+                  <span>Análise operacional e indicadores</span>
                 </li>
               </ul>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Node.js</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">PostgreSQL</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Google Maps API</span>
+              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">React</span>
+              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">SQLite</span>
+              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Arquitetura Orientada por Especificações</span>
             </div>
 
             {/* Terminal toggle */}
@@ -216,8 +216,8 @@ data class Tarefa(
 
           <div className="col-span-12 md:col-span-5 order-1 md:order-2 flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <span className="font-chivo text-[10px] text-[#444748] bg-[#e3e2e2] px-3 py-1 uppercase tracking-wide font-semibold">
-                EM DESENVOLVIMENTO
+              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wide font-semibold">
+                CONCLUÍDO / EVOLUÇÃO CONTÍNUA
               </span>
             </div>
 
@@ -226,25 +226,25 @@ data class Tarefa(
             </h3>
 
             <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              Aplicativo Android para organização doméstica, lembretes recorrentes, histórico de tarefas e controle simples da rotina familiar.
+              Aplicativo desenvolvido para organizar e automatizar rotinas domésticas, manutenção preventiva e gestão residencial.
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
               <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
-                Features Principais
+                Principais Funcionalidades
               </h4>
               <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Histórico integrado de tarefas realizadas</span>
+                  <span>Manutenção preventiva</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Configuração de recorrências personalizadas</span>
+                  <span>Gestão de rotinas</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Armazenamento SQLite local robusto</span>
+                  <span>Alertas e notificações</span>
                 </li>
               </ul>
             </div>
@@ -276,7 +276,7 @@ data class Tarefa(
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <span className="font-chivo text-[10px] text-[#444748] bg-[#e3e2e2] px-3 py-1 uppercase tracking-wide font-semibold">
+              <span className="font-chivo text-[10px] text-white bg-[#1b1c1c] px-3 py-1 uppercase tracking-wide font-semibold">
                 DESENVOLVIMENTO CONTÍNUO
               </span>
             </div>
@@ -286,33 +286,37 @@ data class Tarefa(
             </h3>
 
             <p className="font-serif text-base text-[#444748] leading-relaxed mt-2">
-              Framework metodológico para especificação e documentação estruturada que orienta o desenvolvimento assistido por Inteligência Artificial.
+              AISDD é uma metodologia para desenvolvimento de software orientado por especificações e assistido por Inteligência Artificial. Seu objetivo é garantir continuidade, rastreabilidade, redução de alucinações e evolução incremental em projetos de longo prazo.
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
               <h4 className="font-chivo text-xs text-[#1b1c1c] font-bold uppercase tracking-wider border-b border-[#e3e2e2] pb-1.5">
-                Features Principais
+                Princípios Fundamentais
               </h4>
               <ul className="flex flex-col gap-2 font-serif text-sm text-[#444748]">
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>11 envelopes documentais persistentes</span>
+                  <span>Documentação como fonte da verdade</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Tratamento ativo contra alucinações de IA</span>
+                  <span>Continuidade entre sessões</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Rastreabilidade cirúrgica do fluxo técnico</span>
+                  <span>Mudanças incrementais e rastreáveis</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  <span>Preservação de funcionalidades existentes</span>
                 </li>
               </ul>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Metodologia</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Markdown Spec</span>
-              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">AI Operations</span>
+              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Especificação</span>
+              <span className="font-chivo text-[10px] text-[#444748] border border-[#e3e2e2] px-2.5 py-1 uppercase tracking-wider">Arquitetura</span>
             </div>
 
             {/* Terminal toggle */}

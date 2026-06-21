@@ -45,8 +45,8 @@ export default function Contact() {
             <h2 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl md:text-5xl tracking-tighter leading-none mb-6">
               Vamos Conversar
             </h2>
-            <p className="font-serif text-base text-[#444748] leading-relaxed max-w-md">
-              Interessado em aplicar metodologias rigorosas, projetar automações de processos ou discutir arquitetura de sistemas avançados aplicada à logística? Entre em contato direto ou envie uma mensagem ao lado.
+            <p className="font-serif text-base text-[#444748] leading-relaxed max-w-md font-semibold">
+              Interessado em discutir operações, automação, arquitetura de soluções ou desenvolvimento orientado por especificações?
             </p>
           </div>
 

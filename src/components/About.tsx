@@ -27,13 +27,17 @@ export default function About() {
           {/* Text Content */}
           <div className="flex flex-col gap-6 justify-center order-2 lg:order-1">
             <div className="border-l-2 pl-6 border-[#1b1c1c]">
-              <p className="font-serif text-lg md:text-xl text-[#1b1c1c] leading-relaxed">
-                {aboutHeading}
+              <p className="font-serif text-lg md:text-xl text-[#1b1c1c] leading-relaxed font-semibold">
+                Anderson Matheus Albuquerque atua como Supervisor Operacional de Logística e desenvolve soluções digitais orientadas à resolução de problemas reais.
               </p>
             </div>
             
             <p className="font-serif text-base text-[#444748] leading-relaxed">
-              {aboutText}
+              Sua experiência diária com roteirização, gestão operacional, custos, expedição, coletas e performance logística serve como base para criação de sistemas, automações e metodologias voltadas à eficiência operacional.
+            </p>
+
+            <p className="font-serif text-base text-[#444748] leading-relaxed">
+              Combinando experiência operacional prática, pensamento analítico e desenvolvimento assistido por Inteligência Artificial, busca transformar processos complexos em soluções simples, escaláveis e aplicáveis ao mundo real.
             </p>
 
             {/* Quote */}

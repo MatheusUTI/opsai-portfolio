@@ -42,34 +42,24 @@ export const portfolioData = {
   },
   areas: [
     {
-      title: "Logística operacional",
-      description: "Supervisão prática, otimização de fluxos, organização de carregamento e gestão ativa do dia a dia logístico.",
+      title: "Logística Operacional",
+      description: "Gestão operacional, roteirização, custos, expedição, coletas e acompanhamento de performance para operações logísticas de alta complexidade.",
       iconName: "Truck"
     },
     {
-      title: "Roteirização e performance",
-      description: "Definição inteligente de caminhos, análise de tempos, custos de frete e aproveitamento máximo de frota.",
-      iconName: "Layers"
-    },
-    {
-      title: "Controle de custos",
-      description: "Monitoramento detalhado de diárias, quilometragem, combustível e otimização financeira operacional.",
-      iconName: "DollarSign"
-    },
-    {
-      title: "Automação de processos",
-      description: "Scripts, macros e robôs para eliminar digitação manual de relatórios e agilizar expedição.",
+      title: "Automação de Processos",
+      description: "Eliminação de atividades manuais através de automação, integração de dados e padronização de fluxos operacionais.",
       iconName: "Cpu"
     },
     {
-      title: "Sistemas internos",
-      description: "Criação de ferramentas web e móveis sob medida para equipes operacionais de fretes e pátio.",
+      title: "Sistemas Corporativos",
+      description: "Desenvolvimento e arquitetura de soluções digitais voltadas à resolução de problemas reais de operações e negócios.",
       iconName: "Database"
     },
     {
-      title: "Desenvolvimento com IA",
-      description: "Engenharia de especificações e uso inteligente de LLMs para acelerar codificação e análise de dados.",
-      iconName: "Compass"
+      title: "Desenvolvimento Assistido por IA",
+      description: "Especificação, arquitetura e condução de projetos de software assistidos por Inteligência Artificial, priorizando continuidade, rastreabilidade e redução de alucinações.",
+      iconName: "Layers"
     }
   ] as Area[],
   projects: [

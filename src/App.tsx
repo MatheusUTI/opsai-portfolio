@@ -6,7 +6,9 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Journey from "./components/Journey";
 import Areas from "./components/Areas";
+import Impact from "./components/Impact";
 import Projects from "./components/Projects";
 import AISDDSection from "./components/AISDDSection";
 import Stack from "./components/Stack";
@@ -26,8 +28,14 @@ export default function App() {
       {/* About Section */}
       <About />
 
+      {/* Journey Section (Timeline) */}
+      <Journey />
+
       {/* Key Areas Section */}
       <Areas />
+
+      {/* Impact Section */}
+      <Impact />
 
       {/* Projects Section */}
       <Projects />

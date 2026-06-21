@@ -36,16 +36,16 @@ export default function Hero() {
         <div className="md:col-span-10 md:col-start-2 text-center md:text-left flex flex-col items-center md:items-start space-y-8">
           
           <div className="space-y-3">
-            <span className="font-chivo text-xs font-bold tracking-widest text-[#444748] uppercase bg-slate-100 px-3 py-1 border border-slate-200">
-              {role}
+            <span className="font-chivo text-xs font-bold tracking-widest text-[#444748] uppercase bg-[#efeded] px-3 py-1 border border-[#e3e2e2]">
+              Anderson Matheus Albuquerque
             </span>
-            <h1 className="font-chivo font-extrabold text-[#1b1c1c] text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none max-w-4xl">
-              {fullName}
+            <h1 className="font-chivo font-extrabold text-[#1b1c1c] text-3xl sm:text-5xl md:text-6xl tracking-tighter leading-tight max-w-4xl">
+              Supervisor Operacional de Logística e Criador de Soluções Digitais
             </h1>
           </div>
 
-          <p className="font-serif text-lg md:text-xl text-[#444748] max-w-2xl md:ml-12 border-l-2 border-[#e3e2e2] pl-6 leading-relaxed">
-            {tagline}
+          <p className="font-serif text-base md:text-lg text-[#444748] max-w-2xl md:ml-12 border-l-2 border-[#e3e2e2] pl-6 leading-relaxed">
+            Transformo experiência operacional real em sistemas, automações e metodologias para otimizar processos, reduzir custos e apoiar decisões.
           </p>
 
           {/* Keyword Tags */}

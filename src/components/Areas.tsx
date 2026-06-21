@@ -26,7 +26,7 @@ export default function Areas() {
             Atuação
           </h2>
           <p className="font-serif text-base md:text-lg text-[#444748] max-w-sm leading-relaxed">
-            Foco na interseção entre tecnologia e operações de logística diária, integrando dados e ferramentas práticas para acelerar resultados.
+            Atuo na interseção entre operações, tecnologia e desenvolvimento de soluções digitais, utilizando experiência prática para otimizar processos e apoiar decisões.
           </p>
         </div>
 
